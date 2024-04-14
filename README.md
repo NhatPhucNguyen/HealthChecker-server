@@ -13,8 +13,8 @@ Before you begin, ensure you have met the following requirements:
 To install Project, follow these steps:
 
 ```bash
-git clone <repository-url>
-cd <repository-directory>
+git clone https://github.com/NhatPhucNguyen/group-project-microservices
+cd group-project-microservices
 npm install
 ```
 ## Using Project
