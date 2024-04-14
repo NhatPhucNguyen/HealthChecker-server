@@ -1,4 +1,4 @@
-# Project Name
+# Group Project – Developing Apps Using Emerging Web Technologies
 
 ## Prerequisites
 
