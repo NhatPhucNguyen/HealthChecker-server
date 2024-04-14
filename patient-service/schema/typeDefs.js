@@ -8,6 +8,25 @@ const typeDefs = gql`
         updatedAt: String
         createdAt: String
     }
+    type DailyInformation{
+        id:ID,
+        patientId:ID,
+        pulseRate:Float,
+        bloodPressure:Float,
+        weight:Float,
+        temperature:Float,
+        respiratoryRate:Float,
+        updatedAt:String,
+        createdAt:String
+    }
+    input DailyInformationInput{
+        patientId:ID,
+        pulseRate:Float,
+        bloodPressure:Float,
+        weight:Float,
+        temperature:Float,
+        respiratoryRate:Float
+    }
     type Symptom{
         label:String,
         value:String
@@ -32,10 +51,14 @@ const typeDefs = gql`
     type Query {
         alertsByPatient(patientId: ID): [Alert]
         symptomsByPatient(patientId: ID): SymptomData
+        dailyInformationByPatient(patientId: ID): [DailyInformation]
     }
     type Mutation {
         createAlert(alertInput: AlertInput): Alert
         createSymptom(symptomInput: SymptomInput): SymptomData
+        createDailyInformation(dailyInformationInput: DailyInformationInput): DailyInformation
+        updateDailyInformation(id: ID, dailyInformationInput: DailyInformationInput): DailyInformation
+        deleteDailyInformation(id: ID): DailyInformation
     }
 `;
 export default typeDefs;

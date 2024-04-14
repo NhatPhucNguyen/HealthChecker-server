@@ -10,7 +10,12 @@
         "dev:nurse": "nodemon ./nurse-service/server.js",
         "dev:patient": "nodemon ./patient-service/server.js",
         "dev:gateway": "nodemon ./gateway.js",
-        "dev:all": "npm-run-all --parallel dev:auth dev:nurse dev:patient dev:gateway"
+        "dev:all": "npm-run-all --parallel dev:auth dev:nurse dev:patient dev:gateway",
+        "start:auth": "node ./authentication-service/server.js",
+        "start:nurse": "node ./nurse-service/server.js",
+        "start:patient": "node ./patient-service/server.js",
+        "start:gateway": "node ./gateway.js",
+        "start:all": "npm-run-all --parallel start:auth start:nurse start:patient start:gateway"
     },
     "author": "",
     "license": "ISC",
