@@ -5,6 +5,19 @@ const typeDefs = gql`
         message: String
         token: String
     }
+    type User {
+        id: ID
+        username: String
+        role: String
+        dateOfBirth: String
+        address: String
+        city: String
+        phoneNumber: String
+        email: String
+        createdAt: String
+        updatedAt: String
+        fullName:String
+    }
     input LoginInput {
         username: String
         password: String
@@ -17,11 +30,13 @@ const typeDefs = gql`
         address: String
         city: String
         phoneNumber: String
-        email: String
+        email: String,
+        fullName:String
     }
     type Query {
         logout: Response!
         validateToken: Response!
+        patients: [User]
     }
     type Mutation {
         register(registerInput: RegisterInput): Response!

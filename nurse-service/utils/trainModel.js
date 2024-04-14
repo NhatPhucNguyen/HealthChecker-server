@@ -78,7 +78,7 @@ const trainModel = async () => {
     //compile the model with an MSE loss function and Adam algorithm
     model.compile({
         loss: "meanSquaredError",
-        optimizer: tf.train.adam(0.06),
+        optimizer: tf.train.adam(0.01),
     });
     console.log(model.summary());
 
@@ -87,7 +87,8 @@ const trainModel = async () => {
         let elapsedTime;
         //train the model
         await model.fit(trainingData, outputData, {
-            epochs: 200,
+            epochs: 100,
+            validationSplit: 0.2,
             callbacks: {
                 //list of callbacks to be called during training
                 onEpochEnd: async (epoch, log) => {

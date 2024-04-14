@@ -11,12 +11,12 @@ export const getDailyTipById = async (_, { id }) => {
 };
 
 export const getDailyTipByPatient = async (_, { patientId }) => {
-    const dailyTips = await DailyTip.findOne({ patient: patientId });
+    const dailyTips = await DailyTip.find({ patient: patientId });
     return dailyTips;
 };
 
-export const addDailyTip = async (_, { dailyInput }) => {
-    const newDailyTip = new DailyTip(dailyInput);
+export const addDailyTip = async (_, { dailyTipInput }) => {
+    const newDailyTip = new DailyTip(dailyTipInput);
     return await newDailyTip.save();
 };
 

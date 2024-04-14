@@ -13,8 +13,9 @@ export const register = async (_, { registerInput }) => {
             message: "Missing required fields",
         };
     }
+    console.log(registerInput.role.toLowerCase());
     if (
-        registerInput.role.toLowerCase() !== "nurse" ||
+        registerInput.role.toLowerCase() !== "nurse" &&
         registerInput.role.toLowerCase() !== "patient"
     ) {
         return {
@@ -110,3 +111,8 @@ export const validateToken = async (_, __, { req, res }) => {
         return { isSuccess: false, message: "Token is expired" };
     }
 };
+
+export const getAllPatients = async () => {
+    const patients = await User.find({ role: "patient" });
+    return patients;
+}

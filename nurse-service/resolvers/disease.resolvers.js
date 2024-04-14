@@ -48,7 +48,7 @@ export const predictDisease = async (_, { symptoms }) => {
             }
         });
     }
-    console.log(resultArr[0]);
+    console.log(resultArr[0],resultArr.length);
     console.log(foundDiseases);
     const convertedResult = Array.from(foundDiseases).map((item) => {
         return { disease: item.Disease, description: item.Description };

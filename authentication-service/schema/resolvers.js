@@ -1,4 +1,5 @@
 import {
+    getAllPatients,
     login,
     logout,
     register,
@@ -9,6 +10,7 @@ const resolvers = {
     Query: {
         logout: logout,
         validateToken: validateToken,
+        patients: getAllPatients,
     },
     Mutation: {
         register: register,
