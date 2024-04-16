@@ -7,6 +7,7 @@ import {
     updateDailyInformation,
     deleteDailyInformation,
     getDailyInformationByPatientId,
+    getDailyInformationById,
 } from "../resolvers/patient.resolvers.js";
 
 const resolvers = {
@@ -14,6 +15,7 @@ const resolvers = {
         alertsByPatient: getAlertsByPatientId,
         symptomsByPatient: getNewestSymptomByPatientId,
         dailyInformationByPatient: getDailyInformationByPatientId,
+        dailyInformation: getDailyInformationById,
     },
     Mutation: {
         createAlert,

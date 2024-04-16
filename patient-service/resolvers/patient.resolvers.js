@@ -34,6 +34,11 @@ export const getDailyInformationByPatientId = async (_, { patientId }) => {
     return dailyInformation;
 };
 
+export const getDailyInformationById = async (_, { id }) => {
+    const dailyInformation = await DailyInformation.findById(id);
+    return dailyInformation;
+}
+
 export const updateDailyInformation = async (
     _,
     { id, dailyInformationInput }
